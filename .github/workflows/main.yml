@@ -33,3 +33,9 @@ jobs:
       - name: Save Docker Image as Tarball
         run: |
           docker save -o keyclockcustom-image.tar keycloak:latest
+
+      - name: Upload Docker Image as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: keyclockcustom-image
+          path: keyclockcustom-image.tar
