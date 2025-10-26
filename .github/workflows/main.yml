@@ -5,7 +5,7 @@
 name: CI build and save docker image
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
