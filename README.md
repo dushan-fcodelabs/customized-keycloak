@@ -8,9 +8,17 @@ Playground for [Keycloak](https://www.keycloak.org) extensions, providers, SPI i
 
 [MFA Authenticator](./mfa-authenticator) - Authenticator sends an OTP email to the user.
 
-In development environment build and run all the stuff with:
+### Running in development mode
+To run Keycloak with the custom extensions in development mode, use the following command:
+```bash
+./mvnw clean package -DskipTests '&&' docker compose up
+```
 
-    & ./mvnw clean package -DskipTests && docker compose up
+### Building Docker Image
+To build the Docker image with the custom Keycloak extensions, run the following command:
+```bash
+./mvnw clean package -DskipTests '&&' docker build -t customized-keycloak:latest .
+```  
 
 
 ### Customized Password Validation Endpoint
